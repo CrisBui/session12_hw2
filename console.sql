@@ -22,6 +22,7 @@ BEGIN
     IF NEW.quantity > v_stock THEN
         RAISE EXCEPTION 'Không đủ hàng tồn kho!';
     end if;
+    RETURN NEW;
 end;
 $$
 LANGUAGE plpgsql;
